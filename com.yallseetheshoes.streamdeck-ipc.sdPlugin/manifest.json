@@ -4,11 +4,27 @@
 	"Author": "yallseetheshoes",
 	"Actions": [
 		{
-			"Name": "Counter",
-			"UUID": "com.yallseetheshoes.streamdeck-ipc.increment",
+			"Name": "Websocket-emitter",
+			"UUID": "com.yallseetheshoes.streamdeck-ipc.ws-emitter",
 			"Icon": "imgs/actions/counter/icon",
-			"Tooltip": "Displays a count, which increments by one on press.",
-			"PropertyInspectorPath": "ui/increment-counter.html",
+			"Tooltip": "TBD",
+			"PropertyInspectorPath": "ui/ws-emitter.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Pipe-emitter",
+			"UUID": "com.yallseetheshoes.streamdeck-ipc.pipe-emitter",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "TBD",
+			"PropertyInspectorPath": "ui/pipe-emitter.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -30,10 +46,6 @@
 		"MinimumVersion": "7.1"
 	},
 	"OS": [
-		{
-			"Platform": "mac",
-			"MinimumVersion": "12"
-		},
 		{
 			"Platform": "windows",
 			"MinimumVersion": "10"
