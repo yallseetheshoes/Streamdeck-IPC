@@ -11,7 +11,6 @@ export class PipeEmitter extends SingletonAction<pipeSettings> {
             await ev.action.showAlert();
             return;
         }
-        streamDeck.logger.info("sending payload");
         await PipeManager.send(channel,payload ?? "").catch(async (e) => {
             await ev.action.showAlert();
             await streamDeck.ui.sendToPropertyInspector({
