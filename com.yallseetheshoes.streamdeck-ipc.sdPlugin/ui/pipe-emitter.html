@@ -11,20 +11,34 @@
 <!--
     Learn more about property inspector components at https://sdpi-components.dev/docs/components
 -->
-<sdpi-item label="channel">
+<sdpi-item label="Channel">
     <sdpi-textarea
             setting="channel"
             rows="1"
     >
     </sdpi-textarea>
 </sdpi-item>
-<sdpi-item label="payload">
+<sdpi-item label="Payload">
     <sdpi-textarea
             setting="payload"
             rows="5"
     >
     </sdpi-textarea>
 </sdpi-item>
+<sdpi-item label="Errors">
+    <div id="error-display" style="color: #ff4545;">
+
+    </div>
+</sdpi-item>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        SDPIComponents.streamDeckClient.sendToPropertyInspector.subscribe((msg) => {
+            document.getElementById("error-display").innerText = `IPC failure: ${msg.payload.msg}`;
+        });
+    });
+</script>
+
 </body>
 
 </html>
