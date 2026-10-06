@@ -20,6 +20,7 @@ export class PipeEmitter extends SingletonAction<pipeSettings> {
                 event: "pipeError",
                 msg: e instanceof Error ? e.message : String(e)
             });
+            throw e;
         }).then(async ()=>{
             await ev.action.showOk();
         });
