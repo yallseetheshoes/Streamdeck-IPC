@@ -21,7 +21,6 @@ export class PipeEmitter extends SingletonAction<pipeSettings> {
         }).then(async ()=>{
             await ev.action.showOk();
         });
-        this.events.emit("pressed");
     }
 }
 
