@@ -1,7 +1,6 @@
-import streamDeck, { action, KeyDownEvent, SingletonAction, WillAppearEvent } from "@elgato/streamdeck";
+import streamDeck, { action, KeyDownEvent, SingletonAction } from "@elgato/streamdeck";
 import PipeManager from "../pipeManager"
 import EventEmitter from "events";
-import * as net from "net";
 
 @action({ UUID: "com.yallseetheshoes.streamdeck-ipc.pipe-emitter" })
 export class PipeEmitter extends SingletonAction<pipeSettings> {
@@ -10,7 +9,6 @@ export class PipeEmitter extends SingletonAction<pipeSettings> {
         const { channel, payload } = ev.payload.settings;
         if (!channel) {
             await ev.action.showAlert();
-            streamDeck.logger.warn("missing channel");
             return;
         }
         streamDeck.logger.info("sending payload");
